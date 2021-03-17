@@ -25,9 +25,9 @@ export const CreateProcedure: IModelProcedure<
       return allValues;
     }
 
-    for (let propName in allValues) {
+    for (let propName in allValues as any) {
       propertyNames.push(propName);
-      propertyValues.push(allValues[propName]);
+      propertyValues.push((allValues as any)[propName]);
     }
 
     // Check for required properties
